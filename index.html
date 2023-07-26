@@ -56,9 +56,47 @@
             </p>
         </li> <hr>
 
-        <!-- <li>
+        <li>
             "Write the promise function to print numbers from 1 to 7, in which 1 should be printed after 1 sec, 2 should be printed after 2 sec, 3 should be printed after 3 sec, and so on.Numbers 1 2 3 4 5 6 7" 
-        </li> <hr> -->
+            <p>
+                <pre>var promise = new Promise((resolve,reject)=>{
+
+                    function abc(){
+                                      setTimeout(()=>{
+                                          console.log(1)
+                                          setTimeout(()=>{
+                                              console.log(2)
+                                              setTimeout(()=>{
+                                                  console.log(3)
+                                                  setTimeout(()=>{
+                                                      console.log(4)
+                                                      setTimeout(()=>{
+                                                          console.log(5)
+                                                          setTimeout(()=>{
+                                                              console.log(6)
+                                                              setTimeout(()=>{
+                                                                  console.log(7)
+                                                              },7000)
+                                                          },6000)
+                                                      },5000)
+                                                  },4000)
+                                              },3000)
+                                          },2000)
+                                      },1000)
+                                  }
+                    
+                                abc();
+                      });
+                    
+                      promise.then((result)=>{
+                          console.log(result)
+                      })
+                    
+                      .catch((err)=>{
+                          console.log(err)
+                      })</pre>
+            </p>
+        </li> <hr>
 
         <li>
             "Create a promise function accepting an argument, if yes is passed to the function then it should go to resolved state and print Promise Resolved, and if nothing is passed then it should go to reject the state and catch the error and print Promise Rejected"
@@ -155,6 +193,22 @@
         </li> <hr>
 
         <li>
+            Create examples to explain async await function?
+            <p>
+                <pre>async function display(){
+                    let promise = new Promise((resolve)=>{
+                        setTimeout(()=>{
+                            resolve('Hey There!!!')
+                        },10000)
+                    })
+                    console.log( await promise)
+                }
+                
+                display();</pre>
+            </p>
+        </li>
+
+        <li>
             Create examples to explain promise.all function?
             <pre>var first = function one(){
                 setTimeout(()=>{
@@ -182,6 +236,8 @@
                 console.log(b)
             })</pre>
         </li> <hr>
+
+
     </ol>
 </body>
 </html>
