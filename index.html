@@ -26,8 +26,162 @@
         </li> <hr>
 
         <li>
+          "Write a callback function to print numbers from 1 to 7, in which 1 should be printed after 1 sec, 2 should be printed after 2 sec, 3 should be printed after 3 sec, and so on. Explain callback hell.Numbers 1 2 3 4 5 6 7"
+            <p>
+                <pre>function abc(){
+                    setTimeout(()=>{
+                        console.log(1)
+                        setTimeout(()=>{
+                            console.log(2)
+                            setTimeout(()=>{
+                                console.log(3)
+                                setTimeout(()=>{
+                                    console.log(4)
+                                    setTimeout(()=>{
+                                        console.log(5)
+                                        setTimeout(()=>{
+                                            console.log(6)
+                                            setTimeout(()=>{
+                                                console.log(7)
+                                            },7000)
+                                        },6000)
+                                    },5000)
+                                },4000)
+                            },3000)
+                        },2000)
+                    },1000)
+                }
+                
+                abc();</pre>
+            </p>
+        </li> <hr>
+
+        <!-- <li>
+            "Write the promise function to print numbers from 1 to 7, in which 1 should be printed after 1 sec, 2 should be printed after 2 sec, 3 should be printed after 3 sec, and so on.Numbers 1 2 3 4 5 6 7" 
+        </li> <hr> -->
+
+        <li>
+            "Create a promise function accepting an argument, if yes is passed to the function then it should go to resolved state and print Promise Resolved, and if nothing is passed then it should go to reject the state and catch the error and print Promise Rejected"
+
+            <p>
+                <pre>var create = new Promise((resolved,rejected)=>{
+                    a = "yes"
+                    if(resolved === a){
+                        resolved('Promise Resolved')
+                    }
+                    else{
+                        rejected(' Promise Rejected')
+                    }
+                })
+                
+                create.then((success)=>{
+                    console.log(success)
+                })
+                .catch((err)=>{
+                    console.log(err)
+                })
+
+                </pre>
+            </p>
+        </li> <hr>
+
+        <li>
+            Create examples to explain callback function?
+            <p>
+                <pre>var ayush = function sum(a,b){
+                    return a + b 
+                }
+                
+                function display(show){
+                    console.log(show)
+                }
+                
+                display(ayush(4,5))</pre>
+            </p>
+        </li> <hr>
+
+        <li>
+            Create examples to explain callback hell function?
+            <p>
+                <pre>var arr = [1, 2, 3, 4];
+
+                    function display() {
+                      setTimeout(() => {
+                        var one = document.createElement("li");
+                        one.setAttribute("id", "one");
+                        document.getElementById("one").innerHTML = arr[0];
+                        setTimeout(() => {
+                          var two = document.createElement("li");
+                          two.setAttribute("id", "two");
+                        document.getElementById("two").innerHTML = arr[1];
+                          setTimeout(() => {
+                            var three = document.createElement("li");
+                            three.setAttribute("id", "three");
+                            document.getElementById("three").innerHTML = arr[2];
+                            setTimeout(() => {
+                              var four = document.createElement("li");
+                              four.setAttribute("id", "four");
+                              document.getElementById("four").innerHTML = arr[3];
+                            }, 1600);
+                          }, 1400);
+                        }, 1200);
+                      }, 1000);
+                    }
+                    </pre>
+            </p>
+        </li> <hr>
+
+        <li>
+            Create examples to explain promises function?
+            <p><pre>var arr = [1,2,3,4,5,"",6,7,8,9,10]
+
+                let promise = new Promise((success,failed)=>{
+                 
+                    if(arr.includes("")){
+                       success("There is a String")
+                    }
+                    else{
+                        failed("No Strings Found")
+                    }
+                })
+                
+                promise.then((a)=>{
+                    console.log(a)
+                })
+                
+                .catch((b)=>{
+                    console.log(b)
+                })</pre></p>
+        </li> <hr>
+
+        <li>
+            Create examples to explain promise.all function?
+            <pre>var first = function one(){
+                setTimeout(()=>{
+                    console.log(1)
+                  },1000)
+            }
             
-        </li>
+            var second = function two(){
+                setTimeout(()=>{
+                    console.log(2)
+                },4000)
+            }
+            
+            var third = function three(){
+                setTimeout(()=>{
+                    console.log(3)
+                },2000)
+            }
+            
+            var arr = Promise.all([first,second,third])
+            .then((a)=>{
+                console.log(a)
+            })
+            .catch((b)=>{
+                console.log(b)
+            })</pre>
+        </li> <hr>
     </ol>
 </body>
 </html>
